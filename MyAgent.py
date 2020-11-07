@@ -1,10 +1,16 @@
 import gfootball.env as football_env
+from keras.models import Model
+from keras.layers import Input,Dense,Conv2D,Flatten,MaxPooling2D
+from keras.optimizers import Adam
+from keras.applications.mobilenet_v2 import MobileNetV2
 
 env = football_env.create_environment(
                                 env_name='11_vs_11_stochastic', 
                                 representation='raw',
                                 render=True)
-print(env.action_space.sample())
+
+def model_from_pixels():
+
 
 # for episodes in range(4):
 #     obs = env.reset()
